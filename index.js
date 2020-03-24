@@ -7,6 +7,9 @@ function obtenerConversor() {
     // coge lo que el usuario ingrea en el input
     const value = input.value;
     // se creó una variable para llamar la función conversor (guardar lo que retorne esa función)
+    if (value === "") {
+        return;
+    }
     const valorConvertido = conversor(value);
     // llama a la función y manda la variable a esa función ya que valorConvertido recibe un parámetro
     imprimirResultado(valorConvertido);
@@ -24,7 +27,6 @@ function conversor(value) {
     } else {
         // sino devuelve que farenheit no está definido
         return "fahrenheit not defined"; 
-
     }
 }
 
