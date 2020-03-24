@@ -6,10 +6,10 @@ function obtenerConversor() {
     const input = document.querySelector('#input-value');
     // coge lo que el usuario ingrea en el input
     const value = input.value;
-    const parseValue = parseInt(value,10)
+    const parseValue = parseInt(value, 10)
     // se creó una variable para llamar la función conversor (guardar lo que retorne esa función)
-    if (typeof parseValue !== "number") {
-        window.alert('Ingrese un Número');
+    if (isNaN(parseValue)) {
+        alert('Ingrese un Número');
         return;
     } 
     const valorConvertido = conversor(parseValue);
