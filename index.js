@@ -32,3 +32,6 @@ function imprimirResultado(valorConvertido) {
     const divResultado = document.querySelector('#resultado');
     divResultado.innerHTML=valorConvertido; // pegar el texto al html
 }
+
+const boton = document.querySelector('#botonConvertir')
+boton.addEventListener('click', obtenerConversor);
