@@ -1,6 +1,18 @@
 'use strict'
+//no recibe parámetro porque no es necesario, el botón no envía nada
+// Es la función que el botón va a llamar
+function obtenerConversor() { 
+    // Devuelve el html del input
+    const input = document.querySelector('#input-value');
+    // coge lo que el usuario ingrea en el input
+    const value = input.value;
+    // se creó una variable para llamar la función conversor (guardar lo que retorne esa función)
+    const valorConvertido = conversor(value);
+    // llama a la función y manda la variable a esa función ya que valorConvertido recibe un parámetro
+    imprimirResultado(valorConvertido);
+}
 
-//conversor es el nombre de la función. Dentro del paréntesis es lo que quiero recivir
+//conversor es el nombre de la función. Dentro del paréntesis es lo que quiero recibir
 function conversor(value) { 
     //se nombra la variable let para que su alcance sea local. 
     let fahrenheit = value * 9/5 + 32; 
@@ -16,18 +28,7 @@ function conversor(value) {
     }
 }
 
-function obtenerConversor() {
-    // Devolver el html
-    const input = document.querySelector('#input-value');
-    // coger el html del input
-    const value = input.value;
-    // secreó una variable para llamar la primera función
-    const valorConvertido = conversor(value);
-
-    imprimirResultado(valorConvertido);
-}
-
 function imprimirResultado(valorConvertido) {
-    const inputDos = document.querySelector('#resultado');
-    inputDos.innerHTML=valorConvertido; // pegar el texto al html
+    const divResultado = document.querySelector('#resultado');
+    divResultado.innerHTML=valorConvertido; // pegar el texto al html
 }
